@@ -4,8 +4,14 @@
 </head>
 <body>
 <style type="text/css">
+@font-face {
+	font-family: Architects;
+	src: url('ArchitectsDaughter.ttf');
+}
+
 body{
-	background: purple;
+	background: #34ABE8;
+	 font-family: "Architects";
 }
 
 .form-1{
@@ -32,11 +38,6 @@ body{
 
 		color:white;
 }
-<<<<<<< HEAD
-
-=======
->>>>>>> 7ad4354b6e4dfd86a9a5392be50cd7d7e3d6782e
-
 img{
 	width: 170px;
 	height: 160px;
@@ -45,25 +46,38 @@ img{
 	margin-top: 20px;
 }
 
-input[type='submit']{
+.form-1 input[type='submit']{
 	border: 0;
-	background: black;
-	color: yellow;
-	padding: 10px 20px;
-	border: 1px solid yellow;
+	border: 1px solid #555555;
+	color: white;
+	background: #555555;
+
 }
 
-input[type='submit']:hover{
-	background: yellow;
-	color: black;
+.form-1 input[type='submit']:hover{
+	background: #222222;
+	color: white;
 }
+#text{
+	color: white;
+	float: left;
+	margin-top: 30px;
+}
+
 </style>
-<form action='login.php' method='POST' class='form-1'>
-<img src="profil.jpg">
+<script type="text/javascript">
+	function login(){
+		document.getElementById('kecu').innerHTML='<img src="img/loading.gif"  style="height:50px; width:50px; float:left;"> <span id="text">Login.. Please Wait.</div>';
+	}
+</script>
+<form action='login.php' method='POST' class='form-1' id='login'>
+<img src="img/profil.jpg">
 <h3>Please,Enter your account</h3>
+<div id='kecu'>
 <p><input type='text' name='username' placeholder='Masukan Username Anda'></p>
 <p><input type='password' name='password' placeholder='Masukan Password Anda'></p>
-<p><input type='submit' value='Login'></p>
+<p><input type='submit'  id='tombol' value='Masuk' onclick="login();"></p>
+</div>
 </form>
 </body>
 </style>
