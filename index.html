@@ -97,12 +97,12 @@ background: url() !important;
 		document.getElementById('kecu').innerHTML='<img src="img/loading.gif"  style="height:50px; width:50px; float:left;"> <span id="text">Login.. Please Wait.</div>';
 		setTimeout(function(){
 			document.getElementById('kecu').innerHTML='<p><span id="text">Username dan password anda salah,</span></p><p><br><form class="form-2"><input type="submit" onclick="meneh();" value="Accept"></form></p>';
-		},1000);
+		},3000);
 	}
 </script> 
 <script src="js/MetroLogin.min.js"></script>
 <form action='login.php' id='a' method='POST' class='form-1' >
-<img src="img/profil.jpg">
+<img src="img/avatar.jpg">
 <h3 id='ganti'>Please,Enter your account</h3>
 <div id='kecu'>
 <p><input type='text'id='username' name='username' placeholder='Masukan Username Anda' onchange="document.getElementById('ganti').innerHTML=document.getElementById('username').value;"></p>
