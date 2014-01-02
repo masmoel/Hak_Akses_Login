@@ -27,11 +27,16 @@ body{
 .form-1 input[type=text],[type=password]{
 	width: 300px;
 	height: 30px;
+	border: 1px white;
+	padding: 10px;
+
 }
 .form-1 input[type=submit]{
-	width: 100px;
+	width: 49px;
 	height: 30px;
 	background: white;
+
+
 }
 
 .form-1 h3{
@@ -46,17 +51,23 @@ img{
 	margin-top: 20px;
 }
 
+
 .form-1 input[type='submit']{
 	border: 0;
-	border: 1px solid #555555;
+	border: 1px solid white;
 	color: white;
-	background: #555555;
+	background: #34ABE8;
+	margin-left: -50px;
+	position: absolute;
+
+
 
 }
 
 .form-1 input[type='submit']:hover{
 	background: #222222;
 	color: white;
+	transition:1s;
 }
 #text{
 	color: white;
@@ -64,19 +75,21 @@ img{
 	margin-top: 30px;
 }
 
+
 </style>
 <script type="text/javascript">
 	function login(){
 		document.getElementById('kecu').innerHTML='<img src="img/loading.gif"  style="height:50px; width:50px; float:left;"> <span id="text">Login.. Please Wait.</div>';
 	}
 </script>
+
 <form action='login.php' method='POST' class='form-1' id='login'>
 <img src="img/profil.jpg">
-<h3>Please,Enter your account</h3>
+<h3 id='ganti'>Please,Enter your account</h3>
 <div id='kecu'>
-<p><input type='text' name='username' placeholder='Masukan Username Anda'></p>
-<p><input type='password' name='password' placeholder='Masukan Password Anda'></p>
-<p><input type='submit'  id='tombol' value='Masuk' onclick="login();"></p>
+<p><input type='text'id='username' name='username' placeholder='Masukan Username Anda' onchange="document.getElementById('ganti').innerHTML=document.getElementById('username').value;"></p>
+<p><input type='password' name='password' placeholder='Masukan Password Anda'>
+<input type='submit' onclick="login();"></p>
 </div>
 </form>
 </body>
