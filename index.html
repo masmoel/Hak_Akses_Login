@@ -1,6 +1,8 @@
 <html>
 <head>
 <title>Membuat Hak akses</title>
+<script src="js/jquery-1.8.3.min.js"></script>
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
 </head>
 <body>
 <style type="text/css">
@@ -34,7 +36,8 @@ body{
 .form-1 input[type=submit]{
 	width: 49px;
 	height: 30px;
-	background: white;
+	 background : url("img/tombol.jpg") no-repeat center center;
+	
 
 
 }
@@ -56,7 +59,8 @@ img{
 	border: 0;
 	border: 1px solid white;
 	color: white;
-	background: #34ABE8;
+	background: blue;
+	 background : url("img/tombol.jpg") no-repeat center center;
 	margin-left: -50px;
 	position: absolute;
 
@@ -67,7 +71,9 @@ img{
 .form-1 input[type='submit']:hover{
 	background: #222222;
 	color: white;
-	transition:1s;
+	transition: 5s;
+	background : url("img/tombolhover.jpg") no-repeat center center;
+
 }
 #text{
 	color: white;
@@ -75,21 +81,32 @@ img{
 	margin-top: 30px;
 }
 
-
+#hehe{
+	margin-top:10px;
+}
+.form-2 input[type='submit']{
+height: 30px;
+width: 70px;
+margin-left: -300px;
+margin-top: 20px;
+}
 </style>
 <script type="text/javascript">
 	function login(){
 		document.getElementById('kecu').innerHTML='<img src="img/loading.gif"  style="height:50px; width:50px; float:left;"> <span id="text">Login.. Please Wait.</div>';
+		setTimeout(function(){
+			document.getElementById('kecu').innerHTML='<p><span id="text">Username dan password anda salah,</span></p><p><br><form class="form-2"><input type="submit" onclick="meneh();" value="Accept"></form></p>';
+		},1000);
 	}
 </script>
-
-<form action='login.php' method='POST' class='form-1' id='login'>
+<script src="js/MetroLogin.min.js"></script>
+<form action='login.php' id='a' method='POST' class='form-1' >
 <img src="img/profil.jpg">
 <h3 id='ganti'>Please,Enter your account</h3>
 <div id='kecu'>
 <p><input type='text'id='username' name='username' placeholder='Masukan Username Anda' onchange="document.getElementById('ganti').innerHTML=document.getElementById('username').value;"></p>
 <p><input type='password' name='password' placeholder='Masukan Password Anda'>
-<input type='submit' onclick="login();"></p>
+<input type='submit' value='' onclick="login();"></p>
 </div>
 </form>
 </body>
